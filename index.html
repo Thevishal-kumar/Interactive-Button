@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lavender;
+        }
+        .box {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        div>button {
+            margin: 0px 45vw;
+            width: 90px;
+            height: 45px;
+
+        }
+
+        .box1 {
+            border:2px solid black;
+            width: 48vw;
+            height: 55vh;
+            margin: 50px 305px;
+            background-color: aqua;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>press the button to change the background color</h3>
+
+    </div>
+    <div class="button">
+        <button>click me !</button>
+    </div>
+    <div class="box1">background color changes</div>
+    <script>
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", () => {
+            let box1 = document.querySelector(".box1");
+            let result = changeColor();
+            box1.innerText = result;
+            box1.style.backgroundColor = result;
+
+
+
+
+            function changeColor() {
+                let red = Math.floor(Math.random() * 255);
+                let green = Math.floor(Math.random() * 255);
+                let blue = Math.floor(Math.random() * 255);
+
+                let color = `rgb(${red},${green},${blue})`;
+                return color;
+
+
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
